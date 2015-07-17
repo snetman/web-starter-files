@@ -1,0 +1,90 @@
+/* =======================================================
+    Headings
+   ======================================================= */
+
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+
+// Common settings
+
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: $space;
+  font-family: $font-headline;
+  font-weight: $font-weight-headline;
+  color: $black;
+}
+
+// Basic heading hierarchy
+
+h1, .as-h1{
+  font-size: 32px;
+  font-size: 2rem; // 32
+  line-height: 1.5;  // 48
+}
+
+h2, .as-h2{
+  font-size: 1.5em; // 24
+  line-height: 1; // 24
+}
+
+h3, .as-h3{
+  font-size: 20px;
+  font-size: 1.25rem; // 20
+  line-height: 1.2; // 24
+}
+
+h4, .as-h4{
+  font-size:18px;
+  font-size:1.125rem; // 18
+  line-height:1.333;  // 24
+}
+
+h5, .as-h5{
+  font-size:16px;
+  font-size:1rem; // 16
+  line-height:1.5; // 24
+}
+
+h6, .as-h6{
+  font-size:16px;
+  font-size:1rem; // 16
+  line-height:1.5; // 24
+}
+
+// Extra large headings
+
+.giga{
+  font-size: 80px;
+  font-size: 5rem; // 80
+  line-height: 1.2; // 96
+}
+.mega{
+  font-size:64px;
+  font-size:4rem; // 64
+  line-height:1.125; // 72
+}
+.kilo{
+  font-size:48px;
+  font-size:3rem; // 48
+  line-height:1; // 48
+}
+
+// Extra small headings
+
+.milli {
+  font-size: 12px;
+  font-size: 0.75rem; // 12
+  line-height: 1.5; // 18
+}
+
+// Heading groups
+
+hgroup {
+  margin-bottom: $space;
+  
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+}
+
+// End headings

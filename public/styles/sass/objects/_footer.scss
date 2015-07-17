@@ -1,0 +1,16 @@
+/* =======================================================
+    Site footer
+   ======================================================= */
+
+.site-footer {
+	margin-top: $space-quad;
+	padding: $space;
+	background: $gray-light-3;
+	color: $body-color;
+	font-size: $font-size-small;
+
+	a {
+		color: $body-color;
+		@include incognitolink;
+	}
+}

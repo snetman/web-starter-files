@@ -1,0 +1,229 @@
+/* =======================================================
+    Navigation
+   ======================================================= */
+
+// Base styles
+
+.nav {
+  > ul {
+    @include zero;
+    list-style: none;
+    line-height: $line-height-small;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+//
+// Section navigation
+//
+
+.section-nav {
+  > ul {
+    border: 1px solid $gray-light-3;
+  }
+
+  li {
+    border-bottom: 1px solid $gray-light-3;
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: $space-half;
+    background-color: $gray-light;
+    color: $body-color;
+
+    &:hover,
+    &:active {
+      background-color: $white;
+
+      .pointer {
+        display: block;
+      }
+    }
+  }
+
+  .pointer {
+    position: absolute;
+    right: 0;//.5em;
+    top: 50%;
+    margin-top: -16px;
+    color: $gray-light-4;
+
+    // State
+    display: none;
+  }
+
+  // You are here
+
+  .sec-nav-item & #sec-nav-item a,
+  .current > a,
+  .current {
+    background-color: $gray-light-2;
+    pointer-events: none;
+
+    .pointer {
+      display: block;
+    }
+  }
+}
+
+
+//
+//  Action nav
+//
+
+.action-nav {
+  > ul li {
+    display: inline-block;
+  }
+}
+
+//
+// Jump nav
+//
+
+.jump-nav {
+  @extend .section-nav;
+}
+
+//
+// Collapsing nav
+// Used to collapse section and jump navs for RWD
+//
+
+/*
+Markup:
+
+  <nav class="nav jump-nav collapse-nav">
+    <h4 class="title">Optional title:</h4>
+    <ul>
+      <li><a href="#">Menu <b class="pointer" aria-hidden="true">&darr;</b></a></li>
+      <li><a href="#">Nav items continue from here...<a></li>
+    </ul>
+  </nav>
+*/
+
+.collapse-nav {
+  @include breakpoint(0 $bp-med) {
+
+    > ul > li:first-child .pointer {
+      display: block;
+    }
+
+    &.is-collapsed {
+      > ul > li {
+        display: none;
+      }
+      > ul > li:first-child {
+        display: block;
+        border-bottom-width: 0;
+      }
+    }
+
+  }
+
+  @include breakpoint($bp-med) {
+    > ul > li:first-child {
+      display: none;
+    }
+  }
+}
+
+//
+//  Inline nav
+//
+
+.inline-nav {
+
+  .separator {
+    display: none;
+  }
+
+  @include breakpoint(0 $bp-med) {
+    > ul li {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    > ul li {
+      display: inline-block;
+      margin-right: .25em;
+      &:last-child .separator {
+        display: none;
+      }
+    }
+
+    .separator {
+      display: inline-block;
+      margin-left: .5em;
+      opacity: .5;
+    }
+  }
+}
+
+//
+// Pagination
+//
+
+.page-nav {
+  > ul {
+    @include clearfix;
+
+    li {
+      float: left;
+      border-right: $border-width $border-style $border-color;
+      &:last-child {
+        border-right-width: 0;
+      }
+
+      a {
+        display: block;
+        padding: $space-quarter $space-half;
+        min-width: 44px;
+        text-align: center;
+      }
+    }
+
+    // states
+
+    .is-disabled,
+    .is-disabled a {
+      color: $gray-light-3;
+    }
+    .is-current,
+    .is-current a {
+      color: $body-color;
+      font-weight: $font-weight-headline;
+    }
+
+  }
+
+  // Types
+
+  &-full {
+    > ul {
+      @include flexbox;
+      border: $border-width $border-style $border-color;
+
+      li {
+        float: none;
+        @include flex(1);
+        background-color: $gray-light;
+
+        a:hover {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}

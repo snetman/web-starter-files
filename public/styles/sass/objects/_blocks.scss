@@ -1,0 +1,182 @@
+/* =======================================================
+    Blocks
+   ======================================================= */
+
+//
+//  Media block
+//
+
+.block-media {
+  position: relative;
+  @include flexbox;
+  @include align-items(flex-start);
+  margin-bottom: $space;
+
+  .b-figure {
+    margin-right: $space-half;
+  }
+
+  .b-body {
+    @include flex(1); // Rest are flex 0 by default, so they won't expand, but this will
+  }
+
+  .b-actions {
+    margin-left: $space-half;
+  }
+}
+
+//
+// Compact blocks
+//
+
+.block-compact {
+  margin-bottom: $space-half;
+}
+
+//
+// Flush blocks
+//
+
+.block-flush {
+  margin-bottom: 0;
+}
+
+/*
+  <div class="block-media">
+    <img class="b-figure" src="{{ "fpo-user-photo.png" | asset_url }}" height="80" width="80">
+    <div class="b-body">
+      First Lastname
+      title
+    </div>
+  </div>
+*/
+
+// Generic block element
+
+/*
+[class*='block'] {
+  @include clearfix;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+}
+*/
+
+// Thumbnail
+
+/*
+.b-thumb {
+  img {
+    display: block;
+  }
+}
+
+// Text
+
+.b-text {
+  .headline {
+    margin-bottom: $space-quarter;
+  }
+}
+
+// Body
+
+.b-body {
+  //
+}
+
+*/
+// Switchable block
+// This block swaps between an image floated left and full width
+
+/*
+.block-switch {
+
+  .b-thumb {
+    //@include float-span(1);
+  }
+
+  .b-text {
+    //@include float-span(3,'last');
+  }
+
+  @include breakpoint($bp-med) {
+
+    .b-thumb {
+      float: none;
+      margin: 0;
+      width: 100%;
+      img {
+        margin-bottom: $space-quarter;
+      }
+    }
+    .b-text {
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+*/
+
+// Inset block
+/*
+.block-inset {
+  position: relative;
+
+  .b-thumb {
+    position: relative;
+    z-index: 0;
+
+    img {
+      margin-bottom: $space-half;
+    }
+  }
+}
+*/
+
+// Thumbnail block
+/*
+.block-thumb {
+  .b-thumb {
+    //@include float-span(1);
+  }
+  .b-text {
+    //@include float-span(3,'last');
+  }
+
+  @include breakpoint($bp-med) {
+    .b-thumb {
+      //@include float-span(1);
+    }
+    .b-text {
+      //@include float-span(5,'last');
+    }
+  }
+}
+*/
+
+// Hero block
+/*
+.block-hero {
+  margin-bottom: $space;
+
+  @include breakpoint($bp-large) {
+    position: relative;
+
+    .b-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $overlay-dark;
+      color: $white;
+      padding: $pad-and-half;
+    }
+  }
+}
+*/
+
+// End blocks

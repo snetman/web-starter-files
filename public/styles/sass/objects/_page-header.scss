@@ -1,0 +1,64 @@
+/* =======================================================
+    Page header
+   ======================================================= */
+
+/*
+Markup:
+
+<header class="page-header">
+  <div class="main">
+    <h1>My Plans</h1>
+  </div>
+  <!-- /.main -->
+  <nav class="nav action-nav">
+    <ul>
+      <li><a href="#" class="btn btn-primary">+ New Thing</a></li>
+    </ul>
+  </nav>
+</header>
+*/
+
+.page-header,
+.section-header {
+  @include clearfix;
+  @include flexbox;
+  @include align-items(flex-end); // align items bottom (cross-axis)
+  position : relative;
+  margin-bottom: $space;
+  padding: 0;
+
+  &.menu-top {
+    @include align-items(flex-start);
+  }
+
+  > .main {
+    @include flex(1);
+  }
+
+  > h1,
+  > h2,
+  > .main > h1,
+  > .main > h2 {
+    margin-bottom: 0;
+  }
+
+  // Compact
+
+  &-compact {
+    margin-bottom: $space-half;
+  }
+
+  // Flush
+
+  &-flush {
+    margin-bottom: 0;
+  }
+
+  // Divided
+
+  &-divided {
+    border-bottom: $border-width $border-style $border-color;
+    padding-bottom: $space-half;
+  }
+
+}

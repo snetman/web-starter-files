@@ -1,0 +1,26 @@
+/* =======================================================
+    Site header
+   ======================================================= */
+
+.site-header {
+  z-index: 100;
+  position: relative;
+  
+  padding: $space-half 0;
+  
+  text-align: center;
+  background: $gray-dark;
+  color: #fff;  
+}
+
+/*  Logo
+   ======================================================= */
+
+.logo {
+	display: inline-block;
+	margin: 0 auto;
+	color: $white;
+	> a {
+  	color: $white;
+	}
+}

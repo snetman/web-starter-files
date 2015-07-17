@@ -1,0 +1,141 @@
+//
+// Layouts
+//
+
+// Layout container
+
+.lc {
+  @include container;
+  position: relative;
+  // clear: both;
+  max-width: $grid-max;
+  margin: 0 auto;
+  padding: 0 $grid-padding;
+
+  @include breakpoint($bp-med) {
+    padding: {
+      left: $grid-padding-med;
+      right: $grid-padding-med;
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    padding: {
+      left: $grid-padding-large;
+      right: $grid-padding-large;
+    }
+  }
+}
+
+// Main containers
+
+#outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+
+//
+//  Templates
+//
+
+// One column layout
+
+.l-1col {
+
+  @include breakpoint($bp-med) {
+    .l-main {
+      @include span(10);
+      @include pre(2);
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    .l-main {
+      @include span(8);
+      @include pre(2);
+    }
+  }
+
+}
+
+.l-1col-full {
+  .l-main {
+    @include full;
+  }
+}
+
+// Two Column Layout
+// Standard two column layout with main and sidebar column
+
+.l-2col {
+  @include clearfix;
+
+  .l-aside {
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($bp-med) {
+    .l-main {
+      @include span(9);
+      @include prefix(1);
+      @include last;
+    }
+
+    .l-aside {
+      @include span(3);
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    .l-main {
+      @include span(8);
+      @include prefix(1);
+    }
+
+    .l-aside {
+      @include span(2);
+    }
+  }
+
+}
+
+// Reversed Two Column Layout
+// Two column layout with main sidebar to right but first in source
+
+.l-2col-rev {
+  @include clearfix;
+
+  .l-aside {
+    margin-bottom: $space;
+  }
+
+  @include breakpoint($bp-med $bp-large) {
+    .l-main {
+      @include span(isolate 9 at 1);
+    }
+
+    .l-aside {
+      @include span(isolate 3 at 10);
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    .l-main {
+      @include span(isolate 9 at 1);
+    }
+
+    .l-aside {
+      @include span(isolate 2 at 11);
+    }
+  }
+
+}

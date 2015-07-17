@@ -1,0 +1,12 @@
+//
+// Default font sizes
+//
+
+html {
+  font-size: 16px;
+  line-height: 1.25;
+  @include breakpoint($bp-med) {
+    font-size: 18px;
+    line-height: 1.333333;
+  }
+}

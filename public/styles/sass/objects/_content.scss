@@ -1,0 +1,10 @@
+/* =======================================================
+    Site content
+   ======================================================= */
+
+#content {
+  @include clearfix;
+	padding-top: $pad;
+	padding-bottom: $pad;
+	overflow: hidden;
+}
